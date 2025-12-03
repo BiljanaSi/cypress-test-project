@@ -20,6 +20,24 @@ module.exports = defineConfig({
     viewportWidth: 1000,  
 
     viewportHeight: 660,
+
+    reporter: 'mochawesome',
+    reporterOptions: {
+     
+      overwrite: false, 
+      
+      json: true,
+      
+      reportDir: 'cypress/reports/mocha', 
+      
+      reportFilename: 'report',
+      
+      charts: true,
+    },
+
+
+
+
     
     setupNodeEvents(on, config) {
 
