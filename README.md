@@ -64,3 +64,28 @@ npx cypress open
 | **`e2e_checkout.cy.js`** | Full End-to-End Flow. | Login, adding products, filling out the form, completing the purchase, and verifying success message. |
 | **`checkout_negative_scenarios.cy.js`** | Negative Form Testing. | Verifies error messages when required fields are missing (First Name, Last Name, Postal Code). |
 | **`inventory_data_validation.cy.js`** | Data Validation and Sorting. | Checks the sorting functionality (e.g., by price **Low to High** and name **Z to A**) and verifies the correct items are displayed first. |
+
+🚀 Cypress API Testing Project (JSONPlaceholder CRUD)
+This project contains a set of End-to-End API tests written in Cypress to verify the core CRUD (Create, Read, Update, Delete) operations against the mock API service, JSONPlaceholder.
+
+
+Running the Tests
+
+To execute the entire CRUD cycle test suite in headless mode using the Chrome browser:
+
+npx cypress run --spec "cypress/e2e/api/json_placeholder_crud_tests.cy.js" --browser chrome
+
+Project Structure & Key Files
+
+The project follows a standard Cypress structure, utilizing a service layer to separate test logic from API request logic.
+
+
+| File Path | Purpose | Key Details |
+| :--- | :--- | :--- |
+| **`cypress/e2e/api/json_placeholder_crud_tests.cy.js`** | **Test Specification.** Contains the actual test cases (`it` blocks) and assertions (`expect` statements). | **Focuses on validation** of status codes and response data. Uses `createdPostId` to link tests sequentially. |
+| **`cypress/services/ApiService.js`** | **API Service Layer.** Encapsulates all `cy.request()` calls. | Uses **PATCH** for the update operation to ensure stability with dynamic IDs (>100) on the JSONPlaceholder mock server. |
+
+
+
+
+
