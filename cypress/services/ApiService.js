@@ -1,32 +1,38 @@
 class ApiService {
-    // NEMA BASE URL-a ovde!
+    getApiUrl() {
+        
+        return Cypress.env('apiUrl'); 
+    }
 
     // Kreiranje Posta (CREATE)
     createPost(title, body, userId) {
+        const url = `${this.getApiUrl()}/posts`;
         return cy.request({
             method: 'POST',
-            url: `/posts`, 
+            url: url, 
             body: { 
                 title: title, 
                 body: body,
-                userId: userId // JSONPlaceholder zahteva userId
+                userId: userId 
             }
         });
     }
 
     // READ
     getPost(postId) {
+        const url = `${this.getApiUrl()}/posts/${postId}`;
         return cy.request({
             method: 'GET',
-            url: `/posts/${postId}`, 
+            url: url, 
         });
     }
 
     // UPDATE
    updatePost(postId, title, body, userId) {
+    const url = `${this.getApiUrl()}/posts/${postId}`;
     return cy.request({
         method: 'PATCH',
-        url: `/posts/${postId}`,
+        url: url,
         body: { 
             id: postId, 
             title: title, 
@@ -38,9 +44,10 @@ class ApiService {
 
     // DELETE
     deletePost(postId) {
+        const url = `${this.getApiUrl()}/posts/${postId}`;
         return cy.request({
             method: 'DELETE',
-            url: `/posts/${postId}`,
+            url: url,
         });
     }
 }
