@@ -1,0 +1,47 @@
+# Name of the GitHub Actions workflow displayed on the Actions tab
+name: Cypress API Tests
+
+# Define the events that trigger this workflow
+on:
+  push:
+    # Trigger the workflow when code is pushed to the 'main' branch
+    branches: [ main ]
+  pull_request:
+    # Also trigger when a pull request targets the 'main' branch
+    branches: [ main ]
+
+# Define the jobs (tasks) to be executed
+jobs:
+  cypress-run:
+    # Specify the environment (runner) where the tests will run (e.g., Ubuntu, Windows, macOS)
+    runs-on: ubuntu-latest
+    
+    # Define the sequence of steps for this job
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+      
+      # Step 2: Set up the required Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          # Specify the Node version matching your local environment (or a stable version)
+          node-version: 20
+          
+      # Step 3: Install project dependencies (Cypress and other packages from package.json)
+      - name: Install dependencies
+        run: npm install
+      
+      # Step 4: Run the Cypress tests
+      - name: Run Cypress API Tests
+        # Use the official action for Cypress to handle installation and caching efficiently
+        uses: cypress-io/github-action@v6
+        with:
+          # Define the command Cypress will execute
+          # We specifically target the API test file
+          command: npx cypress run --spec "cypress/e2e/api/json_placeholder_crud_tests.cy.js"
+          # Since these are API tests, we don't need a graphical browser or component testing features
+          component-tests: false
+          # Specify the browser (Electron is often fastest, but Chrome is fine too)
+          browser: chrome
