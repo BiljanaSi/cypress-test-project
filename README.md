@@ -1,9 +1,29 @@
-Cypress QA Portfolio Project: 
-SaucedemoThis project features comprehensive test automation for the Saucedemo web application (an e-commerce platform), implemented using the Cypress framework and the Page Object Model (POM) design pattern.
-✨ Key Features
-Page Object Model (POM): Clean and maintainable code structure with separate Page classes for Login, Inventory, and Checkout.
-Wide Test Coverage: Includes functional, End-to-End (E2E), and Data Validation tests.
-Negative Test Scenarios: Verifies correct form validation on the Checkout process.
+# 🛒 Cypress QA Portfolio Project: Saucedemo
+
+This project features comprehensive test automation for the Saucedemo web application (an e-commerce platform), implemented using the **Cypress** framework and the **Page Object Model (POM)** design pattern.
+
+---
+
+## ✨ Key Features
+
+* **Page Object Model (POM):** Clean and maintainable code structure with separate Page classes for Login, Inventory, and Checkout.
+* **Wide Test Coverage:** Includes functional, End-to-End (E2E), and Data Validation tests.
+* **Negative Test Scenarios:** Verifies correct form validation on the Checkout process.
+
+---
+
+## 🛠️ Technologies and Dependencies
+(Ovde bi došla tabela)
+
+---
+
+## 🚀 Setup and Running Tests
+
+### 1. Cloning the Repository
+
+```bash
+git clone [YOUR_REPO_URL]
+cd cypress-test-project
 🛠️ Technologies and Dependencies
 🚀 Setup and Running Tests
 1. Cloning the RepositoryBash git clone [YOUR_REPO_URL]
