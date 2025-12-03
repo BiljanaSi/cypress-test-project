@@ -37,7 +37,7 @@ class InventoryPage {
     }
 
     getSortDropdown() {
-        return cy.get('[data-test="product_sort_container"]').should('be.visible');;
+        return cy.get('.product_sort_container').should('be.visible');
     }
 
     // Action to select a sorting option
