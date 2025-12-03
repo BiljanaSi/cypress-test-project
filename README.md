@@ -13,7 +13,11 @@ This project features comprehensive test automation for the Saucedemo web applic
 ---
 
 ## 🛠️ Technologies and Dependencies
-(Ovde bi došla tabela)
+| Technology | Version | Purpose |
+| :--- | :--- | :--- |
+| **Cypress** | `v13.x` | Primary Test Automation Framework. |
+| **JavaScript/Node.js** | `v20+` / `v24+` | Implementation Language and Runtime Environment. |
+| **Chrome Browser** | `v142` (Headless/Headed) | Browser used for test execution. |
 
 ---
 
