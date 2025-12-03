@@ -18,24 +18,30 @@ describe('Inventory Data Validation Tests', () => {
 
     it('TC_VAL_01: Should sort items correctly by Price (low to high)', () => {
         const lowestPrice = '$7.99'; 
+
+        const cheapestItemName = 'Sauce Labs Onesie';
         
         // 1. Sort the items using the InventoryPage method
         // Using the visible text for readability
         InventoryPage.sortItems('Price (low to high)'); 
 
         // 2. Assertion: Check the price of the first item (should be the lowest)
-        cy.get('.inventory_item_price')
-          .first()
-          .should('have.text', lowestPrice);
+       cy.get('.inventory_item_price')
+       .first().
+       should('have.text', lowestPrice);
+
+       cy.get('.inventory_item_name')
+       .first()
+       .should('have.text', cheapestItemName);
 
         // 3. Optional: Check the name of the cheapest product for confirmation
         cy.get('.inventory_item_name')
           .first()
-          .should('have.text', 'Sauce Labs Bike Light');
+          .should('have.text', 'Sauce Labs Onesie');
     });
 
     it('TC_VAL_02: Should sort items correctly by Name (Z to A)', () => {
-        const highestName = 'T-Shirt (Red)'; 
+        const highestName = 'Test.allTheThings() T-Shirt (Red)'; 
         
         // 1. Sort the items by Name (Z to A)
         InventoryPage.sortItems('Name (Z to A)'); 
