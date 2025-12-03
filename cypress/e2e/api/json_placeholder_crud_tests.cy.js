@@ -1,5 +1,3 @@
-// cypress/e2e/api/json_placeholder_crud_tests.cy.js
-
 import ApiService from '../../services/ApiService'; 
 
 describe('JSONPlaceholder Full CRUD Cycle Testing (Posts)', () => {
