@@ -75,6 +75,21 @@ To execute the entire CRUD cycle test suite in headless mode using the Chrome br
 
 npx cypress run --spec "cypress/e2e/api/json_placeholder_crud_tests.cy.js" --browser chrome
 
+To execute the entire CRUD cycle and automatically generate the detailed HTML report locally, use the custom NPM script:
+
+
+npm run test:api:report
+
+
+## 📊 Test Reporting (Mochawesome)
+
+This project utilizes the **Mochawesome** reporter to generate clear, visual HTML reports detailing the status of the API tests.
+
+* **Reporter:** Mochawesome
+* **Location:** After running the tests with `npm run test:api:report`, the final report is saved to: **`cypress/reports/report.html`**
+
+To view the results, simply open the `report.html` file in any web browser.
+
 Project Structure & Key Files
 
 The project follows a standard Cypress structure, utilizing a service layer to separate test logic from API request logic.
